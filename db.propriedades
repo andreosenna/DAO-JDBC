@@ -1,0 +1,10 @@
+<<<<<<< HEAD
+user=super
+password = metroid01
+dburl=jdbc:mysql://localhost:3306/cursojdbc
+=======
+user=super
+password = metroid01
+dburl=jdbc:mysql://localhost:3306/cursojdbc
+>>>>>>> 11650c017ea3ea292e649dc932b64b7eb5778634
+useSSL=false
