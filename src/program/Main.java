@@ -4,35 +4,24 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 
 import db.DB;
 import db.DBException;
+import model.entities.Department;
+import model.entities.Seller;
 
 public class Main {
 
 	public static void main(String[] args) throws SQLException {
 
-		Connection conn = DB.getConnection();
-		Statement st = null;
-		ResultSet rs = null;
-		try {
-		st = (Statement) conn.createStatement();
-		rs = st.executeQuery("Select * from department");
+		Department dp1 = new Department(1,"Vendas");
+		Seller seller1 = new Seller(1,"Andre","andre@gmail.com",new Date(),3000.0,dp1);
 		
-		while(rs.next()) {
-			System.out.println(rs.getInt(1)+ " - "+ rs.getString(2));
-						}
-			}
-		catch(SQLException e) {
-			throw new DBException(e.getMessage());
-		
-		}
+		System.out.println(seller1);
 		
 		
 		
-		DB.closeResultSet(rs);
-		DB.closeStatement(st);
-		DB.closeConnection();
 	}
 
 }
